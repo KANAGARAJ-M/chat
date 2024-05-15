@@ -327,7 +327,7 @@ class _ContactsPageState extends ConsumerState<ContactsPage> {
           horizontal: 16.0,
         ),
         child: Text(
-          'Contacts on WhatsApp',
+          'Contacts on Chat Up',
           style: Theme.of(context).custom.textTheme.caption,
         ),
       ),
@@ -350,7 +350,7 @@ class _ContactsPageState extends ConsumerState<ContactsPage> {
           horizontal: 16.0,
         ),
         child: Text(
-          'Invite to WhatsApp',
+          'Invite to Chat Up',
           style: Theme.of(context).custom.textTheme.caption,
         ),
       ),

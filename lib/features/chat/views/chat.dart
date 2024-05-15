@@ -277,7 +277,7 @@ class _ChatInputContainerState extends ConsumerState<ChatInputContainer>
                 : colorTheme.iconColor),
       ),
       child: AvoidBottomInset(
-        padding: EdgeInsets.only(bottom: Platform.isAndroid ? 4.0 : 24.0),
+        padding: EdgeInsets.only(bottom: Platform.isAndroid ? 8.0 : 34.0),
         conditions: [showEmojiPicker],
         offstage: Offstage(
           offstage: !showEmojiPicker,

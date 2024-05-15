@@ -26,7 +26,7 @@ class AvoidBottomInset extends StatefulWidget {
 
 class _AvoidBottomInsetState extends State<AvoidBottomInset>
     with WidgetsBindingObserver {
-  double keyboardHeight = SharedPref.instance.getDouble('keyboardHeight')!;
+  double keyboardHeight = SharedPref.instance.getDouble('keyboardHeight')!*1.2;
   bool showEmojiPicker = false;
   bool isKeyboardVisible = false;
   bool isKeyboardFullyVisible = false;
@@ -57,17 +57,18 @@ class _AvoidBottomInsetState extends State<AvoidBottomInset>
     if (!isKeyboardVisible) return;
 
     Future.delayed(
-      Duration(milliseconds: isKeyboardFullyVisible ? 30 : 500),
+      Duration(milliseconds: isKeyboardFullyVisible ? 30 : 400),
       () {
         if (!mounted || !isKeyboardVisible) return;
 
         final height = MediaQuery.of(context).viewInsets.bottom;
+        // final height = MediaQuery.of(context).viewPadding.top;
         if (keyboardHeight == height) return;
 
         setState(
           () {
             isKeyboardFullyVisible = true;
-            keyboardHeight = height;
+            keyboardHeight = height*4;
           },
         );
       },
@@ -83,6 +84,7 @@ class _AvoidBottomInsetState extends State<AvoidBottomInset>
     final savedHeight = getKeyboardHeight();
     if (keyboardHeight != savedHeight) {
       await SharedPref.instance.setDouble('keyboardHeight', keyboardHeight);
+      // await SharedPref.instance.setDouble(,, value)
     }
   }
 
