@@ -26,7 +26,7 @@ class AvoidBottomInset extends StatefulWidget {
 
 class _AvoidBottomInsetState extends State<AvoidBottomInset>
     with WidgetsBindingObserver {
-  double keyboardHeight = SharedPref.instance.getDouble('keyboardHeight')!*1.2;
+  double keyboardHeight = SharedPref.instance.getDouble('keyboardHeight')!*1;
   bool showEmojiPicker = false;
   bool isKeyboardVisible = false;
   bool isKeyboardFullyVisible = false;
