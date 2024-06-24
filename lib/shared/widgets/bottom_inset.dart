@@ -68,7 +68,7 @@ class _AvoidBottomInsetState extends State<AvoidBottomInset>
         setState(
           () {
             isKeyboardFullyVisible = true;
-            keyboardHeight = height*4;
+            keyboardHeight = height*4+;
           },
         );
       },
